@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bonjour</title>
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+   <body>
+      <h1> Voici la liste de tous les instruments de musique</h1>
+         <div>
+            <h3> Voici les 3 premiers instruments </h3>
+               {% for product in products|slice(0, 3) %}
+                  {{product}}
+               {% endfor %}
+         </div>
+         <br/>
+
+      <div>
+         <h3> Voici les 3 derniers instruments du tableau </h3>
+            {% for product in products|slice(3, 6) %}
+               {{product}}
+            {% endfor %}
+      </div>
+   <br/>
+
+      <div>
+         <h3> L'affichage de mon tableau avec "dump"</h3>
+            {{ dump(products) }}
+ 
+   </body>
+</html>
+
